@@ -2,8 +2,8 @@
 The Landingpage for Contraversum
 
 ## Environments
-- Preview: https://main--contraversumLandingpage--johan-t.hlx.page/
-- Live: https://main--contraversumLandingpage--johan-t.hlx.live/
+- Preview: https://main--contraversumLandingpage--contraversum.hlx.page/
+- Live: https://main--contraversumLandingpage--contraversum.hlx.live/
 
 ## Installation
 
