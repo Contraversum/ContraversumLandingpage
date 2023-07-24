@@ -1,9 +1,9 @@
 # Your Project's Title...
-Your project's description...
+The Landingpage for Contraversum
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+- Preview: https://main--contraversumLandingpage--johan-t.hlx.page/
+- Live: https://main--contraversumLandingpage--johan-t.hlx.live/
 
 ## Installation
 
