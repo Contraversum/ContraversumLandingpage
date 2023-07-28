@@ -280,3 +280,16 @@ main .section.highlight {
 .accordion-container>.default-content-wrapper {
   text-align: center;
 }
+
+.accordion-container>.default-content-wrapper > p {
+  margin: 0;
+}
+
+.accordion-container>.default-content-wrapper > h2 {
+  margin-top: 0;
+}
+.accordion-container picture {
+  display: inline-block;
+  max-width: 150px;
+  margin: 0 auto;
+}
