@@ -18,6 +18,7 @@
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #000;
+  --heading-color: #fff;
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -86,27 +87,28 @@ h6 {
 }
 
 h1 {
-  font-size: var(--heading-font-size-xxl)
+  font-size: var(--heading-font-size-xxl);
+  color: var(--heading-color);
 }
 
 h2 {
-  font-size: var(--heading-font-size-xl)
+  font-size: var(--heading-font-size-xl);
 }
 
 h3 {
-  font-size: var(--heading-font-size-l)
+  font-size: var(--heading-font-size-l);
 }
 
 h4 {
-  font-size: var(--heading-font-size-m)
+  font-size: var(--heading-font-size-m);
 }
 
 h5 {
-  font-size: var(--heading-font-size-s)
+  font-size: var(--heading-font-size-s);
 }
 
 h6 {
-  font-size: var(--heading-font-size-xs)
+  font-size: var(--heading-font-size-xs);
 }
 
 p,
@@ -277,6 +279,8 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
+/*ACCORDION STUFF*/
+
 .accordion-container>.default-content-wrapper {
   text-align: center;
 }
@@ -293,3 +297,48 @@ main .section.highlight {
   max-width: 150px;
   margin: 0 auto;
 }
+
+/*BOTTOM CALL TO ACTION*/
+
+.section.bottom-call-to-action {
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.section.bottom-call-to-action .default-content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff; 
+  width: calc(100% - 40px); 
+  max-width: 1920px; 
+  box-sizing: border-box;
+}
+
+.section.bottom-call-to-action picture,
+.section.bottom-call-to-action img {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+@media screen and (min-width: 1920px) {
+  .section.bottom-call-to-action .default-content-wrapper {
+    width: 100%; /* Remove margin on larger screens */
+  }
+}
+
+
+
+
