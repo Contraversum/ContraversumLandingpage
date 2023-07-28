@@ -18,6 +18,7 @@
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #000;
+  --button-background-color: #232425;
   --heading-color: #fff;
 
   /* fonts */
@@ -176,19 +177,21 @@ button {
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--button-background-color);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--background-color);
+  color: var(--button-background-color);
   cursor: pointer;
 }
 
@@ -333,9 +336,13 @@ main .section.highlight {
   z-index: -1;
 }
 
+.section.bottom-call-to-action  h1 {
+  margin-top: 10px;
+}
+
 @media screen and (min-width: 1920px) {
   .section.bottom-call-to-action .default-content-wrapper {
-    width: 100%; /* Remove margin on larger screens */
+    width: 100%; 
   }
 }
 
