@@ -9,7 +9,20 @@
 }
 
 .accordion.block>div div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #ccc;
     padding-top: 15px;
     padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.icon-arrow {
+    display: inline-block;
+    width: 25px;
+    height: 25px; 
+    background-image: url('../../icons/arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
