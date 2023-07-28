@@ -1,17 +1,14 @@
 .accordion.block {
-    width: 600px;
+    width: 90%;  /* Set to 90% so it's fluid on smaller screens */
+    max-width: 600px;  /* Set the maximum width to 600px */
     padding: 30px;
     margin: auto;
 }
 
-.accordion.block>div div:nth-child(2) {
-    display: none;
-}
-
-.accordion.block>div div:nth-child(1) {
+.accordion.block > div div:nth-child(1) {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     border-bottom: 1px solid #ccc;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -25,4 +22,39 @@
     background-image: url('../../icons/arrow.svg');
     background-size: contain;
     background-repeat: no-repeat;
+    transition: transform 0.4s ease; 
+}
+
+.icon-arrow.rotated {
+    transform: rotate(90deg);
+}
+
+.accordion.block > div > div:nth-child(2) {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.accordion.block > div > div:nth-child(2).open {
+    opacity: 1;
+    max-height: 200px; 
+    padding: 15px 0; 
+}
+
+@media only screen and (max-width: 767px) {
+    .accordion.block {
+        padding: 15px;  
+    }
+
+    .accordion.block > div div:nth-child(1) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .icon-arrow {
+        min-width: 20px;
+        min-height: 20px; 
+    }
 }
