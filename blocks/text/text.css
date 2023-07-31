@@ -1,0 +1,21 @@
+.text.block {
+    width: 90%;
+    max-width: 1300px;
+    padding: 20px;
+    margin: auto;
+}
+
+.text.block>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.text.block>div>div:first-child {
+    flex: 1;
+}
+
+.text.block>div>div:last-child {
+    margin-left: 100px;
+}
