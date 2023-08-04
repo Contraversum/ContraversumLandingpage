@@ -20,6 +20,8 @@
   --text-color: #000;
   --button-background-color: #232425;
   --heading-color: #fff;
+  --highlight-pink: #f04071;
+  --highlight-pink-hover: #C93660;
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;

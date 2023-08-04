@@ -19,3 +19,36 @@
 .text.block>div>div:last-child {
     margin-left: 100px;
 }
+
+.bottom-icons {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.bottom-icons img {
+    width: 75px;
+}
+
+.bottom-icons div>div {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-icons>div>div:nth-child(2) {
+    margin-top: 10px;
+    background-color: var(--highlight-pink);
+    color: var(--background-color);
+    padding: 5px 10px;
+    border-radius: 25px;
+    transition: all 0.4s ease;
+    max-width: fit-content;
+}
+
+.bottom-icons>div>div:nth-child(2):hover {
+    cursor: pointer;
+    background-color: var(--highlight-pink-hover);
+}
