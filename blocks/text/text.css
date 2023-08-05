@@ -12,22 +12,21 @@
     gap: 100px;
 }
 
-.text.block>div>div:first-child {
+.text.block>div:first-child>div:first-child {
     flex: 1;
 }
 
-.text.block>div>div:last-child {
+.text.block>div:first-child>div:last-child {
     margin-left: 100px;
 }
 
 .bottom-icons {
     margin-top: 75px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 100px;
     flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
 }
+
 
 .bottom-icons img {
     width: 75px;
@@ -51,4 +50,25 @@
 .bottom-icons>div>div:nth-child(2):hover {
     cursor: pointer;
     background-color: var(--highlight-pink-hover);
+}
+
+.text.block.no-image {
+    width: 750px;
+    position: relative;
+    top: 50px;
+    left: 235px;
+}
+
+.text.block.no-image>div {
+    justify-content: center;
+}
+
+.no-image .bottom-icons>div>div:nth-child(2) {
+    background-color: transparent;
+    cursor: default;
+}
+
+.no-image h2,
+.no-image p {
+    color: var(--background-color);
 }
