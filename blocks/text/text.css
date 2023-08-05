@@ -74,14 +74,26 @@
     }
 }
 
+.text.block.no-image {
+    position: absolute;
+    right: 2%;
+    width: 40vw;
+    max-width: 750px;
+}
+
 .text.block.no-image>div {
     justify-content: center;
+}
+
+.no-image .bottom-icons {
+    margin-left: 50px;
 }
 
 .no-image .bottom-icons>div>div:nth-child(2) {
     background-color: transparent;
     cursor: default;
 }
+
 
 .no-image h2,
 .no-image p {
@@ -90,9 +102,7 @@
 
 .section.pink-background.text-container {
     height: 66vw;
-    /* Set the section height equal to the viewport height */
     position: relative;
-    /* Needed for absolute positioning of the svg container */
 }
 
 .svg-container {
