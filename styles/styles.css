@@ -348,10 +348,3 @@ main .section.highlight {
     width: 100%;
   }
 }
-
-.section.pink-background.text-container {
-  background-image: url('../images/pink-background.svg');
-  height: 957px;
-  background-repeat: no-repeat;
-  background-position: center;
-}

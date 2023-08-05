@@ -17,4 +17,23 @@ export default function decorate(block) {
         block.removeChild(block.children[1]);
     }
     block.appendChild(wrapperDiv);
+
+    fetch('images/pink-background.svg')
+        .then(response => response.text())
+        .then(data => {
+            let section = document.querySelector('.section.pink-background.text-container');
+            let svgContainer = document.createElement('div');
+            svgContainer.innerHTML = data;
+
+            // Adjust the SVG's preserveAspectRatio attribute
+            let svgElement = svgContainer.querySelector('svg');
+            svgElement.setAttribute('preserveAspectRatio', 'none');
+            svgElement.classList.add('svg-container');
+
+            section.prepend(svgContainer);
+        });
+
+
+
+
 }
