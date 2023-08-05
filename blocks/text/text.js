@@ -28,7 +28,7 @@ export default function decorate(block) {
             // Adjust the SVG's preserveAspectRatio attribute
             let svgElement = svgContainer.querySelector('svg');
             svgElement.setAttribute('preserveAspectRatio', 'none');
-            svgElement.classList.add('svg-container');
+            svgElement.classList.add('background');
 
             section.prepend(svgContainer);
         });

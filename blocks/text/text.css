@@ -77,8 +77,16 @@
 .text.block.no-image {
     position: absolute;
     right: 2%;
-    width: 40vw;
+    top: 150px;
+    width: 50vw;
     max-width: 750px;
+}
+
+@media (min-width: 2000px) {
+    .text.block.no-image {
+        right: 5%;
+        top: 300px
+    }
 }
 
 .text.block.no-image>div {
@@ -86,6 +94,7 @@
 }
 
 .no-image .bottom-icons {
+    margin-top: 0px;
     margin-left: 50px;
 }
 
@@ -102,10 +111,11 @@
 
 .section.pink-background.text-container {
     height: 66vw;
+    min-height: 900px;
     position: relative;
 }
 
-.svg-container {
+.background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -114,7 +124,35 @@
     z-index: -1;
 }
 
-.svg-container svg {
+.background svg:first-child {
     width: 100%;
     height: 100%;
+}
+
+.pink-background .text.block {
+    display: flex;
+    flex-direction: column;
+    /* default layout is vertical for larger screens */
+}
+
+@media (max-width: 990px) {
+    .pink-background .text.block {
+        margin-top: 75px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: start;
+        width: 90%;
+    }
+
+    .pink-background .text.block>div:first-child {
+        flex: 1;
+        margin-left: 1vw;
+    }
+
+    .pink-background .bottom-icons {
+        flex-basis: auto;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+    }
 }
