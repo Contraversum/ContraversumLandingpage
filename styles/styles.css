@@ -22,11 +22,15 @@
   --heading-color: #fff;
   --highlight-pink: #f04071;
   --highlight-pink-hover: #C93660;
+  --discord-color: #292B2F;
+  --discord-dark-text: #72767D;
+  --discord-text: #DCDDDE;
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --discord-font-family: 'Inter', sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -346,5 +350,38 @@ main .section.highlight {
 @media screen and (min-width: 1920px) {
   .section.bottom-call-to-action .default-content-wrapper {
     width: 100%;
+  }
+}
+
+.section.discord-social-proof.cards-container {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 1290px) {
+  .section.discord-social-proof.cards-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.section.discord-social-proof>div {
+  margin: auto;
+}
+
+.section.discord-social-proof {
+  margin-top: -300px;
+}
+
+@media (min-width: 1700px) {
+  .section.discord-social-proof {
+    margin-top: -650px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cards-wrapper {
+    margin-left: 50px !important;
+    margin-right: 50px !important;
   }
 }

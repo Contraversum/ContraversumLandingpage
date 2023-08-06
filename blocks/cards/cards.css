@@ -1,31 +1,92 @@
-.cards > ul {
+.cards>ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 16px;
+  width: 400px;
+  height: 530px;
 }
 
-.cards > ul > li {
-  border: 1px solid var(--highlight-background-color);
-  background-color: var(--background-color)
+.cards>ul>li {
+  background-color: var(--discord-color);
+  color: var(--discord-text);
+  border-radius: 5px;
+  padding-left: 10px;
+  font-family: var(--discord-font-family);
 }
 
 .cards .cards-card-body {
   margin: 16px;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 .cards .cards-card-image {
   line-height: 0;
 }
 
-.cards .cards-card-body > *:first-child {
+.cards .cards-card-body>*:first-child {
   margin-top: 0;
 }
 
-.cards > ul > li img {
+.cards>ul>li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.discord-social-proof .cards .cards-card-body .top-elements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.top-elements>p:first-child {
+  width: 50px;
+}
+
+.top-elements>p:first-child img {
+  border-radius: 100%;
+}
+
+.cards-card-body>p {
+  margin-top: -10px;
+}
+
+.discord-social-proof .cards .cards-card-body .top-elements>p {
+  display: flex;
+  align-items: center;
+}
+
+.discord-social-proof .cards .cards-card-body .top-elements {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 16px;
+}
+
+.top-elements>p:nth-child(3) {
+  position: relative;
+  right: 10px;
+  color: var(--discord-dark-text);
+  font-size: smaller;
+}
+
+.section.discord-social-proof>div:first-child .top-elements>p:nth-child(3) {
+  right: 90px;
+}
+
+@media (max-width: 767px) {
+  .cards>ul {
+    width: 100%;
+    height: auto;
+  }
+
+  .cards-card-body>p {
+    width: 90%;
+  }
+
+  .top-elements>p:nth-child(3) {
+    display: none !important;
+  }
 }
