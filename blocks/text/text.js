@@ -32,8 +32,5 @@ export default function decorate(block) {
 
             section.prepend(svgContainer);
         });
-
-
-
-
+    
 }

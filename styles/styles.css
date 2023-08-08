@@ -367,15 +367,18 @@ main .section.highlight {
 
 .section.discord-social-proof>div {
   margin: auto;
+  z-index: 3;
 }
 
-.section.discord-social-proof {
-  margin-top: -300px;
+@media (min-width: 676px) {
+  .section.discord-social-proof {
+    margin-top: -300px;
+  }
 }
 
 @media (min-width: 1700px) {
   .section.discord-social-proof {
-    margin-top: -650px;
+    margin-top: -450px;
     display: flex;
     justify-content: center;
   }
@@ -384,4 +387,22 @@ main .section.highlight {
     margin-left: 50px !important;
     margin-right: 50px !important;
   }
+
+  .pink-background .default-content-wrapper > p {
+    margin-top: 150px !important;
+  }
+}
+
+@media (min-width: 990px) {
+.pink-background .default-content-wrapper > p {
+  display: block !important;
+}
+}
+
+.pink-background .default-content-wrapper > p {
+  display: none;
+  margin-top: 101px;
+  width: 30vw;
+  z-index: -2;
+  max-width: 550px;
 }
