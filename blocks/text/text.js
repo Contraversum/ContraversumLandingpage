@@ -1,6 +1,4 @@
 export default function decorate(block) {
-    console.log('text.js');
-
     const wrapperDiv = document.createElement('div');
     wrapperDiv.classList.add('bottom-icons');
 
