@@ -144,7 +144,7 @@
 .ball.element-2 {
     position: absolute  ;
     bottom: 0;
-    right: 200px;
+    left: 90vw;
     width: auto;
     height: auto;
 }
