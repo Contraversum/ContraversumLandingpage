@@ -135,6 +135,40 @@
     /* default layout is vertical for larger screens */
 }
 
+.ball > svg{
+    position: absolute;
+    width: 12.5vw;
+    height: 12.5vw;
+}
+
+.ball.element-2 {
+    position: absolute  ;
+    bottom: 0;
+    right: 200px;
+    width: auto;
+    height: auto;
+}
+
+.ball.element-3 {
+    position: absolute;
+    top: 750px;
+    left: 40vw;
+    width: auto;
+    height: auto;
+}
+
+@media (min-width: 1600px) {
+
+    .ball.element-1 {
+        position: absolute;
+        top: 0px;
+        left: 20vw;
+    }
+    .ball.element-3 {
+        left: 50vw;
+    }
+}
+
 @media (max-width: 990px) {
     .pink-background .text.block {
         margin-top: 75px;
