@@ -1,0 +1,59 @@
+.steps.block {
+    max-width: 1600px;
+}
+
+.steps.block > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* added this line to separate the items */
+    flex-wrap: wrap;
+}
+
+.text-element {
+    border: 1px solid var(--highlight-pink);
+    border-radius: 5px;
+    width: 320px;
+    padding: 20px;
+} 
+
+.text-element > p {
+    margin: 0;
+}
+
+.text-element > p > strong {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--highlight-pink);
+}
+
+@media (min-width: 767px) {
+    .text-element {
+        width: 375px;
+    }
+}
+
+.steps.block > div > div {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.steps.block > div:nth-child(odd) > div:nth-child(1) {
+    order: 2;
+}
+
+.steps.block > div:nth-child(even) > div:nth-child(2){
+    order: 1;
+}
+
+.steps.block > div > div > picture {
+    margin-left: 50px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.steps.block > div > div > .text-element {
+    width: 100%;
+}
