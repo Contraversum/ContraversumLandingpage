@@ -6,5 +6,10 @@ export default function decorate(block) {
 
     block.prepend(backgroundWrapper);   
     svgImg.classList.add('background');
+
+    const logo = document.createElement('img');
+    logo.src = "/images/white-logo.svg";
+    logo.classList.add('logo');
+    block.appendChild(logo);
 }
   

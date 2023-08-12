@@ -30,24 +30,6 @@ main .hero h1 {
   color: var(--heading-color)
 }
 
-@media (max-width: 1200px) {
-  .hero > div:nth-child(2) > div > p:nth-child(2) {
-    display: none;
-  }
-
-  .hero > div:nth-child(2) > div { 
-    margin-top: -100px;
-    margin-left: 20px;
-    width: 80vw;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero > div:nth-child(2) > div > p:nth-child(4) {
-    display: none;
-  }
-}
-
 /* Make the SVG's container cover the entire hero */
 main .hero > div:first-child {
   position: absolute;
@@ -62,4 +44,41 @@ main .hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.logo {
+  object-fit: contain !important;
+  width: 200px !important;
+  height: auto !important;
+  position: absolute;
+  top: -40px;
+  left: -25px;
+}
+
+@media (max-width: 1200px) {
+  .hero > div:nth-child(2) > div > p:nth-child(2) {
+    display: none;
+  }
+
+  .hero > div:nth-child(2) > div { 
+    margin-top: -100px;
+    margin-left: 20px;
+    width: 80vw;
+  }
+}
+
+@media (max-width: 990px) {
+  .logo {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero > div:nth-child(2) > div > p:nth-child(4) {
+    display: none;
+  }
+  .logo {
+    display: none;
+  }
 }
