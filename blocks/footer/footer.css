@@ -9,6 +9,7 @@ footer .footer {
   margin: auto;
 }
 
-footer .footer p {
+footer .footer p a {
   margin: 0;
+  color: var(--text-color);
 }

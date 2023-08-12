@@ -15,7 +15,7 @@
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
   --background-color: #fff;
-  --overlay-background-color: #eee;
+  --overlay-background-color: #f2e3e7;
   --highlight-background-color: #ccc;
   --text-color: #000;
   --button-background-color: #232425;
@@ -76,7 +76,7 @@ body.appear {
 }
 
 header {
-  height: var(--nav-height);
+  display: none;
 }
 
 h1,
@@ -306,6 +306,10 @@ main .section.highlight {
   display: inline-block;
   max-width: 150px;
   margin: 0 auto;
+}
+
+.section.hero-container {
+  height: 100%;
 }
 
 /*BOTTOM CALL TO ACTION*/
