@@ -55,6 +55,30 @@ main .hero img {
   left: -25px;
 }
 
+.hero > div:nth-child(2) > div picture {
+  position: absolute;
+  height: 90%;
+  top: 0;
+  right: 0;
+}
+
+.hero-container .ball.element-2  {
+  position: absolute;
+  top: 20vh;
+  left: 50vw;
+  width: auto;
+  height: auto;
+}
+
+.hero-container .ball.element-3 {
+  position: absolute;
+  top: 50vh;
+  left: 10vw;
+  width: auto;
+  height: auto;
+}
+
+
 @media (max-width: 1200px) {
   .hero > div:nth-child(2) > div > p:nth-child(2) {
     display: none;
@@ -69,16 +93,12 @@ main .hero img {
 
 @media (max-width: 990px) {
   .logo {
-    left: auto;
-    right: 0;
+    display: none;
   }
 }
 
 @media (max-width: 767px) {
   .hero > div:nth-child(2) > div > p:nth-child(4) {
-    display: none;
-  }
-  .logo {
     display: none;
   }
 }
