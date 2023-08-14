@@ -28,6 +28,7 @@ function addLines() {
         
         // Create an img element for the SVG
         const svgImg = document.createElement('img');
+        svgImg.alt = "Line";
 
         // Depending on the index, set the src for the img
         if (index % 2 === 0) { // odd index (0-based)

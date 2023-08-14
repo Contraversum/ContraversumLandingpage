@@ -31,6 +31,7 @@ export default function decorate(block) {
     const logo = document.createElement('img');
     logo.src = "/images/white-logo.svg";
     logo.classList.add('logo');
+    logo.alt = "Logo";
     block.appendChild(logo);
 
     appendBalls();
