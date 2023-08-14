@@ -25,6 +25,7 @@ export default function decorate(block) {
     backgroundWrapper.appendChild(svgImg);
 
     block.prepend(backgroundWrapper);   
+    svgImg.alt = "Hero background";
     svgImg.classList.add('background');
 
     const logo = document.createElement('img');
