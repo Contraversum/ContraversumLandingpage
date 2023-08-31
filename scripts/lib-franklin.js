@@ -583,45 +583,6 @@ export function decorateButtons(element) {
   });
 }
 
-export async function replaceSVGImageLinks(element) {
-  console.log('replaceSVGImageLinks');
-
-  // Targeting all div elements
-  const allDivElements = element.querySelectorAll('div');
-
-  console.log('allDivElements', allDivElements);
-
-  allDivElements.forEach(async (el) => {
-    const content = el.textContent.trim();
-    console.log('content', content);
-
-    // Check if text content starts with "/images", which implies this div should contain only the image
-    if (content.startsWith('/images')) {
-      console.log('content starts with /images', content);
-      
-      const regex = /\/images\/(.*?\.svg)/; // Regex to capture everything after /images/ until .svg
-      const match = regex.exec(content);
-
-      if (match) {
-        const imageName = match[1];
-        const localImageUrl = `/images/${imageName}`;  // Local URL
-
-        // Fetch the SVG content from the local URL
-        const response = await fetch(localImageUrl);
-        const svgText = await response.text();
-
-        // Create a container for the SVG
-        const svgContainer = document.createElement('div');
-        svgContainer.innerHTML = svgText;
-
-        // Replace the content of the div with the fetched SVG
-        el.innerHTML = '';
-        el.appendChild(svgContainer);
-      }
-    }
-  });
-}
-
 /**
  * Load LCP block and/or wait for LCP in default content.
  */
