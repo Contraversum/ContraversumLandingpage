@@ -39,17 +39,12 @@
 
 .bottom-icons>div>div:nth-child(2) {
     margin-top: 10px;
-    background-color: var(--highlight-pink);
+    background: var(--linear-gradient);
     color: var(--background-color);
     padding: 5px 10px;
     border-radius: 25px;
     transition: all 0.4s ease;
     max-width: fit-content;
-}
-
-.bottom-icons>div>div:nth-child(2):hover {
-    cursor: pointer;
-    background-color: var(--highlight-pink-hover);
 }
 
 @media (max-width: 990px) {

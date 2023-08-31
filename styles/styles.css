@@ -25,6 +25,19 @@
   --discord-color: #292B2F;
   --discord-dark-text: #72767D;
   --discord-text: #DCDDDE;
+  --linear-gradient: linear-gradient( 
+    to bottom right, 
+    #ED237F 0%, 
+    #E93068 30.2083%, 
+    #F14272 57.8125%, 
+    #DF5775 84.8958%, 
+    #DF5775 100%
+  );  
+  --round-gradient: radial-gradient(circle at 50% 50%, 
+    #DD2378 0%, 
+    #FC1D61 38.2166%, 
+    #F3688F 70.2943%, 
+    #FDC6D3 100%);
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -335,6 +348,8 @@ main .section.highlight {
   width: calc(100% - 40px);
   max-width: 1920px;
   box-sizing: border-box;
+  background: var(--round-gradient);
+  border-radius: 12px;
 }
 
 .section.bottom-call-to-action picture,
