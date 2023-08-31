@@ -62,7 +62,7 @@
         margin-top: -50px;
     }
 
-    .text.block>div:first-child>div:last-child svg {
+    .text.block>div:first-child>div:last-child picture img {
         display: block;
         margin: 0 auto;
     }
