@@ -51,8 +51,8 @@ main .hero img {
   width: 200px !important;
   height: auto !important;
   position: absolute;
-  top: -40px;
-  left: -25px;
+  top: -30px;
+  left: -10px;
 }
 
 .hero > div:nth-child(2) > div picture {
@@ -62,9 +62,17 @@ main .hero img {
   right: 0;
 }
 
+.hero-container .ball.element-1  {
+  position: absolute;
+  top: 5vh;
+  left: 30vw;
+  width: auto;
+  height: auto;
+}
+
 .hero-container .ball.element-2  {
   position: absolute;
-  top: 20vh;
+  top: 25vh;
   left: 50vw;
   width: auto;
   height: auto;

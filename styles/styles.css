@@ -292,15 +292,6 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
-/* STEPS STUFF */
-
-.text-element > p > strong {
-  background: linear-gradient(45deg, var(--background-color) -100%, var(--highlight-pink));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 /*ACCORDION STUFF*/
 
 .accordion-container>.default-content-wrapper {

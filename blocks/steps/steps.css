@@ -23,7 +23,10 @@
 .text-element > p > strong {
     font-size: 1.5rem;
     font-weight: 500;
-    color: var(--highlight-pink);
+    background: linear-gradient(45deg, var(--background-color) -100%, var(--highlight-pink));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .steps.block > div > div {
