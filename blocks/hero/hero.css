@@ -62,31 +62,31 @@ main .hero img {
   right: 0;
 }
 
+.hero-container .ball > svg {
+  width: 12.5vw;
+  height: 12.5vw;
+}
+
 .hero-container .ball.element-1  {
   position: absolute;
-  top: 5vh;
-  left: 30vw;
+  top: 2.5vw;
+  left: 25vw;
   width: auto;
   height: auto;
 }
 
 .hero-container .ball.element-2  {
   position: absolute;
-  top: 25vh;
-  left: 50vw;
+  top: 15vw;
+  left: 55vw;
   width: auto;
   height: auto;
 }
 
-.hero-container .ball > svg {
-  width: 100px;
-  height: 100px;
-}
-
 .hero-container .ball.element-3 {
   position: absolute;
-  top: 50vh;
-  left: 10vw;
+  top: 26vw;
+  left: 8vw;
   width: auto;
   height: auto;
 }
@@ -107,6 +107,20 @@ main .hero img {
 @media (max-width: 990px) {
   .logo {
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-container .ball.element-1 {
+    top: 25px;
+  }
+
+  .hero-container .ball.element-2 {
+    top: 130px;
+  }
+
+  .hero-container .ball.element-3 {
+    top: 230px;
   }
 }
 
