@@ -40,7 +40,7 @@
 
 .bottom-icons>div>div:nth-child(2) {
     margin-top: 10px;
-    background: linear-gradient(45deg, var(--background-color) -100%, var(--highlight-pink));
+    background: var(--linear-gradient);
     color: var(--background-color);
     padding: 5px 15px;
     border-radius: 25px;
