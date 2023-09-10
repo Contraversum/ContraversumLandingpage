@@ -80,12 +80,12 @@
 @media (max-width: 767px) {
   .cards>ul {
     width: 100%;
-    background-color: red;
     height: auto;
   }
 
   .cards > ul > li {
     width: 202%;
+
   }
 
   .cards-card-body>p {
@@ -100,5 +100,7 @@
 @media (max-width: 679px) {
   .cards > ul > li {
     width: 100%;
+    max-width: calc(100vw - 40px) !important;
+    overflow: hidden;
   }
 }
