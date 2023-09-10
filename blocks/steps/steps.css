@@ -107,10 +107,32 @@
     }
 
     .steps.block svg {
-        margin-left: 0;
+        margin-left: -20px;
+        transform: scale(0.6);
+        margin-top: -60px;
+        margin-bottom: -140px;
+    }
+
+    .steps.block > div:nth-of-type(2) > div > div > svg {
+        margin-bottom: -70px;
     }
 
     .steps.block h2 {
         text-align: center;
+        margin-left: 0;
+    }
+
+    .text-element {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-element {
+        width: calc(100vw - 80px);
+    }
+
+    .section.text-container svg {
+        transform: scale(0.5) translateX(-25%);
     }
 }
