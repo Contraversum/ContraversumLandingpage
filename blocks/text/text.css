@@ -25,6 +25,8 @@
     flex-wrap: wrap;
     display: flex;
     justify-content: space-evenly;
+    margin-left: -16px;
+    text-align: center;
 }
 
 
@@ -41,10 +43,15 @@
     margin-top: 10px;
     background: var(--linear-gradient);
     color: var(--background-color);
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 25px;
     transition: all 0.4s ease;
     max-width: fit-content;
+}
+
+.bottom-icons>div>div:nth-child(2):hover {
+    cursor: pointer;
+    filter: brightness(0.9);
 }
 
 @media (max-width: 990px) {
@@ -94,8 +101,8 @@
 }
 
 .no-image .bottom-icons>div>div:nth-child(2) {
-    background-color: transparent;
     cursor: default;
+    background: transparent;
 }
 
 
@@ -106,7 +113,7 @@
 
 .section.pink-background.text-container {
     height: 66vw;
-    min-height: 900px;
+    min-height: 920px;
     position: relative;
 }
 
@@ -134,12 +141,14 @@
     position: absolute;
     width: 12.5vw;
     height: 12.5vw;
+    min-height: 100px;
+    min-width: 100px;
 }
 
 .ball.element-2 {
     position: absolute  ;
     bottom: 0;
-    left: 85vw;
+    left: 65vw;
     width: auto;
     height: auto;
 }
@@ -183,5 +192,40 @@
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .section.pink-background.text-container {
+        min-height: 1000px;
+    }
+
+    .text.block > div > div svg {
+        transform: scale(0.5) translateX(-25%);
+    }
+}
+
+@media (max-width: 400px) {
+    .section.pink-background.text-container {
+        min-height: 1100px;
+    }
+
+    .section.pink-background.text-container .text.block.no-image {
+        flex-direction: column;
+    }
+    .section.pink-background.text-container .bottom-icons {
+        flex-direction: row;
+        width: 100vw;
+        margin-left: -5px;
+        gap: 40px;
+        
+    }
+
+    .section.pink-background.text-container .bottom-icons > * {
+        transform: scale(0.9);
+    }
+
+    .section.pink-background.text-container .bottom-icons {
+        max-width: 95vw;
     }
 }

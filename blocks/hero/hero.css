@@ -51,8 +51,8 @@ main .hero img {
   width: 200px !important;
   height: auto !important;
   position: absolute;
-  top: -40px;
-  left: -25px;
+  top: -30px;
+  left: -10px;
 }
 
 .hero > div:nth-child(2) > div picture {
@@ -62,27 +62,43 @@ main .hero img {
   right: 0;
 }
 
-.hero-container .ball.element-2  {
+.hero-container .ball > svg {
+  width: 12.5vw;
+  height: 12.5vw;
+  min-height: 100px;
+  min-width: 100px;
+}
+
+.hero-container .ball.element-1  {
   position: absolute;
-  top: 20vh;
-  left: 50vw;
+  top: 2.5vw;
+  left: 25vw;
   width: auto;
   height: auto;
 }
 
-.hero-container .ball > svg {
-  width: 100px;
-  height: 100px;
+.hero-container .ball.element-2  {
+  position: absolute;
+  top: 15vw;
+  left: 55vw;
+  width: auto;
+  height: auto;
 }
 
 .hero-container .ball.element-3 {
   position: absolute;
-  top: 50vh;
-  left: 10vw;
+  top: 26vw;
+  left: 8vw;
   width: auto;
   height: auto;
 }
 
+@media (max-width: 1600px) {
+  .hero > div:nth-child(2) > div {
+    margin-left: 200px;
+    margin-top: -80px;
+  }
+}
 
 @media (max-width: 1200px) {
   .hero > div:nth-child(2) > div > p:nth-child(2) {
@@ -90,9 +106,9 @@ main .hero img {
   }
 
   .hero > div:nth-child(2) > div { 
-    margin-top: -100px;
+    margin-top: -40px;
     margin-left: 20px;
-    width: 80vw;
+    width: 70vw;
   }
 }
 
@@ -100,10 +116,42 @@ main .hero img {
   .logo {
     display: none;
   }
+
+  .hero > div:nth-child(2) > div { 
+    margin-top: -80px;
+    width: 70vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-container .ball.element-1 {
+    top: 25px;
+  }
+
+  .hero-container .ball.element-2 {
+    top: 130px;
+  }
+
+  .hero-container .ball.element-3 {
+    top: 230px;
+  }
 }
 
 @media (max-width: 767px) {
   .hero > div:nth-child(2) > div > p:nth-child(4) {
     display: none;
+  }
+
+  .hero > div:nth-child(2) > div {
+    margin-top: -100px;
+    margin-left: 5vw;
+    width: 90vw;
+    text-align: center;
+  }
+}
+
+@media (max-width: 340px) {
+  .hero > div:nth-child(2) > div > h1 {
+    font-size: 36px;
   }
 }

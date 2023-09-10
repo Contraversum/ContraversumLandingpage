@@ -83,11 +83,24 @@
     height: auto;
   }
 
+  .cards > ul > li {
+    width: 202%;
+
+  }
+
   .cards-card-body>p {
     width: 90%;
   }
 
   .top-elements>p:nth-child(3) {
     display: none !important;
+  }
+}
+
+@media (max-width: 679px) {
+  .cards > ul > li {
+    width: 100%;
+    max-width: calc(100vw - 40px) !important;
+    overflow: hidden;
   }
 }
