@@ -25,6 +25,7 @@
     flex-wrap: wrap;
     display: flex;
     justify-content: space-evenly;
+    margin-left: -16px;
 }
 
 
@@ -188,5 +189,11 @@
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
+    }
+
+    @media (max-width: 480px) {
+        .section.text-container svg {
+            transform: scale(0.5) translateX(-25%);
+        }
     }
 }
