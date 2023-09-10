@@ -65,6 +65,8 @@ main .hero img {
 .hero-container .ball > svg {
   width: 12.5vw;
   height: 12.5vw;
+  min-height: 100px;
+  min-width: 100px;
 }
 
 .hero-container .ball.element-1  {

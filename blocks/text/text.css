@@ -101,8 +101,8 @@
 }
 
 .no-image .bottom-icons>div>div:nth-child(2) {
-    background-color: transparent;
     cursor: default;
+    background: transparent;
 }
 
 
@@ -141,12 +141,14 @@
     position: absolute;
     width: 12.5vw;
     height: 12.5vw;
+    min-height: 100px;
+    min-width: 100px;
 }
 
 .ball.element-2 {
     position: absolute  ;
     bottom: 0;
-    left: 85vw;
+    left: 65vw;
     width: auto;
     height: auto;
 }
@@ -221,5 +223,9 @@
 
     .section.pink-background.text-container .bottom-icons > * {
         transform: scale(0.9);
+    }
+
+    .section.pink-background.text-container .bottom-icons {
+        max-width: 95vw;
     }
 }

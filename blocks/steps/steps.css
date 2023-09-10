@@ -50,8 +50,8 @@
     order: 2;
 }
 
-.steps.block > div:nth-child(3) > div:nth-child(2) {
-    transform: translateX(-4px);
+.steps.block > div:nth-child(3) > div:nth-child(2) > div {
+    max-width: calc(100vw - 100px) !important;
 }
 
 .steps.block > div:nth-child(3) > div:nth-child(2) {
