@@ -1,4 +1,4 @@
-main .hero-container > div {
+main .hero-container>div {
   max-width: unset;
 }
 
@@ -19,19 +19,19 @@ main .hero h1 {
   color: white;
 }
 
-.hero > div:nth-child(2) > div {
+.hero>div:nth-child(2)>div {
   margin-top: -10vw;
   margin-left: 10vw;
   max-width: 1000px;
   width: 40vw;
 }
 
-.hero > div:nth-child(2) > div > p:nth-child(2) {
+.hero>div:nth-child(2)>div>p:nth-child(2) {
   color: var(--heading-color)
 }
 
 /* Make the SVG's container cover the entire hero */
-main .hero > div:first-child {
+main .hero>div:first-child {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -42,7 +42,6 @@ main .hero > div:first-child {
 
 main .hero img {
   object-fit: cover;
-  width: 100%;
   height: 100%;
 }
 
@@ -55,21 +54,21 @@ main .hero img {
   left: -10px;
 }
 
-.hero > div:nth-child(2) > div picture {
+.hero>div:nth-child(2)>div picture {
   position: absolute;
   height: 90%;
   top: 0;
   right: 0;
 }
 
-.hero-container .ball > svg {
+.hero-container .ball>svg {
   width: 12.5vw;
   height: 12.5vw;
   min-height: 100px;
   min-width: 100px;
 }
 
-.hero-container .ball.element-1  {
+.hero-container .ball.element-1 {
   position: absolute;
   top: 2.5vw;
   left: 25vw;
@@ -77,7 +76,7 @@ main .hero img {
   height: auto;
 }
 
-.hero-container .ball.element-2  {
+.hero-container .ball.element-2 {
   position: absolute;
   top: 15vw;
   left: 55vw;
@@ -94,18 +93,18 @@ main .hero img {
 }
 
 @media (max-width: 1600px) {
-  .hero > div:nth-child(2) > div {
+  .hero>div:nth-child(2)>div {
     margin-left: 200px;
     margin-top: -80px;
   }
 }
 
 @media (max-width: 1200px) {
-  .hero > div:nth-child(2) > div > p:nth-child(2) {
+  .hero>div:nth-child(2)>div>p:nth-child(2) {
     display: none;
   }
 
-  .hero > div:nth-child(2) > div { 
+  .hero>div:nth-child(2)>div {
     margin-top: -40px;
     margin-left: 20px;
     width: 70vw;
@@ -117,7 +116,7 @@ main .hero img {
     display: none;
   }
 
-  .hero > div:nth-child(2) > div { 
+  .hero>div:nth-child(2)>div {
     margin-top: -80px;
     width: 70vw;
   }
@@ -138,11 +137,11 @@ main .hero img {
 }
 
 @media (max-width: 767px) {
-  .hero > div:nth-child(2) > div > p:nth-child(4) {
+  .hero>div:nth-child(2)>div>p:nth-child(4) {
     display: none;
   }
 
-  .hero > div:nth-child(2) > div {
+  .hero>div:nth-child(2)>div {
     margin-top: -100px;
     margin-left: 5vw;
     width: 90vw;
@@ -151,7 +150,7 @@ main .hero img {
 }
 
 @media (max-width: 340px) {
-  .hero > div:nth-child(2) > div > h1 {
+  .hero>div:nth-child(2)>div>h1 {
     font-size: 36px;
   }
 }
