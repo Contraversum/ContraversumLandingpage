@@ -55,4 +55,21 @@ export default function decorate(block) {
     if (block.classList.contains('no-image')) {
         addSVGs();
     }
+    // Grab all the button-like elements.
+    const buttons = document.querySelectorAll('.bottom-icons > div');
+
+    // Add a click event listener to each button-like element.
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Find the target element using the data-id attribute.
+            const targetSection = document.querySelector('[data-id="bottom-call-to-action"]');
+            const positionToScroll = targetSection.getBoundingClientRect().top + window.scrollY - 200;
+
+            // Use window.scrollTo method to scroll to the adjusted position.
+            window.scrollTo({
+                top: positionToScroll,
+                behavior: 'smooth'
+            });
+        });
+    });
 }
