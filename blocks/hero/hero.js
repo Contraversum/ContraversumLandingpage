@@ -1,3 +1,5 @@
+import { animateElements } from '../../scripts/lib-franklin.js'
+
 function appendBalls() {
   fetch('images/ball.svg')
     .then((response) => response.text())
@@ -24,9 +26,9 @@ function handleScroll() {
   const scrollTop = window.scrollY;
 
   // Adjust these factors to change the speed and direction of the animation
-  const factor1 = 0.2;
-  const factor2 = 0.1;
-  const factor3 = 0.15;
+  const factor1 = 0.3;
+  const factor2 = 0.05;
+  const factor3 = 0.1;
 
   const ball1 = document.querySelector('.ball.element-1');
   const ball2 = document.querySelector('.ball.element-2');
@@ -68,5 +70,7 @@ export default function decorate(block) {
   logo.alt = 'Logo';
   block.appendChild(logo);
 
-  appendBalls();
+  appendBalls().then(elements => {
+    animateElements(elements, [0.3, 0.05, 0.1]);
+  });
 }

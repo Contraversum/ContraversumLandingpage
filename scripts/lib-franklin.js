@@ -110,6 +110,37 @@ export async function replaceSVGImageLinks(element) {
   });
 }
 
+export function animateElements(elements, velocities) {
+  const SCROLL_THRESHOLD = 500;
+  if (elements.length !== velocities.length) {
+    console.error('The number of elements must match the number of velocities');
+    return;
+  }
+
+  function handleScroll() {
+    const scrollTop = window.scrollY;
+
+    elements.forEach((el, index) => {
+      const velocity = velocities[index];
+      el.style.transform = `translate(${scrollTop * velocity}px, ${scrollTop * velocity}px)`;
+    });
+
+    if (scrollTop > SCROLL_THRESHOLD) {
+      window.removeEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', monitorScrollPosition);
+    }
+  }
+
+  function monitorScrollPosition() {
+    if (window.scrollY <= SCROLL_THRESHOLD) {
+      window.addEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', monitorScrollPosition);
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+}
+
 /**
  * Loads a CSS file.
  * @param {string} href URL to the CSS file
@@ -141,7 +172,7 @@ export async function loadScript(src, attrs) {
       const script = document.createElement('script');
       script.src = src;
       if (attrs) {
-      // eslint-disable-next-line no-restricted-syntax, guard-for-in
+        // eslint-disable-next-line no-restricted-syntax, guard-for-in
         for (const attr in attrs) {
           script.setAttribute(attr, attrs[attr]);
         }
