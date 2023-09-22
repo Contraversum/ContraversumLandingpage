@@ -1,9 +1,9 @@
-/* header and nav layout */
 header .nav-wrapper {
     background-color: var(--background-color);
     width: 100%;
     z-index: 2;
     position: fixed;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header nav {
