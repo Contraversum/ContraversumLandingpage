@@ -26,8 +26,17 @@ main .hero h1 {
   width: 40vw;
 }
 
+.hero>div {
+  padding-top: 60px;
+}
+
 .hero>div:nth-child(2)>div>p:nth-child(2) {
   color: var(--heading-color)
+}
+
+.hero>div:nth-child(2) img {
+  position: relative;
+  top: 60px;
 }
 
 /* Make the SVG's container cover the entire hero */
@@ -70,7 +79,7 @@ main .hero img {
 
 .hero-container .ball.element-1 {
   position: absolute;
-  top: 2.5vw;
+  top: 5.5vw;
   left: 25vw;
   width: auto;
   height: auto;
@@ -124,7 +133,7 @@ main .hero img {
 
 @media (max-width: 900px) {
   .hero-container .ball.element-1 {
-    top: 25px;
+    top: 85px;
   }
 
   .hero-container .ball.element-2 {
