@@ -25,19 +25,17 @@
   --discord-color: #292B2F;
   --discord-dark-text: #72767D;
   --discord-text: #DCDDDE;
-  --linear-gradient: linear-gradient( 
-    to bottom right, 
-    #ED237F 0%, 
-    #E93068 30.2083%, 
-    #F14272 57.8125%, 
-    #DF5775 84.8958%, 
-    #DF5775 100%
-  );  
-  --round-gradient: radial-gradient(circle at 50% 50%, 
-    #DD2378 0%, 
-    #FC1D61 38.2166%, 
-    #F3688F 70.2943%, 
-    #FDC6D3 100%);
+  --linear-gradient: linear-gradient(to bottom right,
+      #ED237F 0%,
+      #E93068 30.2083%,
+      #F14272 57.8125%,
+      #DF5775 84.8958%,
+      #DF5775 100%);
+  --round-gradient: radial-gradient(circle at 50% 50%,
+      #DD2378 0%,
+      #FC1D61 38.2166%,
+      #F3688F 70.2943%,
+      #FDC6D3 100%);
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -90,10 +88,6 @@ main {
 
 body.appear {
   display: unset;
-}
-
-header {
-  display: none;
 }
 
 h1,
@@ -411,18 +405,18 @@ main .section.highlight {
     margin-right: 50px !important;
   }
 
-  .pink-background .default-content-wrapper > p {
+  .pink-background .default-content-wrapper>p {
     margin-top: 150px !important;
   }
 }
 
 @media (min-width: 990px) {
-.pink-background .default-content-wrapper > p {
-  display: block !important;
-}
+  .pink-background .default-content-wrapper>p {
+    display: block !important;
+  }
 }
 
-.pink-background .default-content-wrapper > p {
+.pink-background .default-content-wrapper>p {
   display: none;
   margin-top: 101px;
   width: 30vw;
