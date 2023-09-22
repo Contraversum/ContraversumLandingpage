@@ -53,6 +53,6 @@ export default function decorate(block) {
     block.appendChild(wrapperDiv);
 
     if (block.classList.contains('no-image')) {
-        addSVGs()
+        addSVGs();
     }
 }
