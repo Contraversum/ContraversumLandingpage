@@ -1,4 +1,4 @@
-import { getMetadata, decorateIcons } from '../../scripts/lib-franklin.js';
+import { getMetadata, decorateIcons, decorateButtons } from '../../scripts/lib-franklin.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -138,6 +138,7 @@ export default async function decorate(block) {
         isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
         decorateIcons(nav);
+        decorateButtons(nav);
         const navWrapper = document.createElement('div');
         navWrapper.className = 'nav-wrapper';
         navWrapper.append(nav);

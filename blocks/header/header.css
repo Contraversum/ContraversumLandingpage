@@ -34,6 +34,18 @@ header nav[aria-expanded="true"] {
     }
 }
 
+@media (max-width: 900px) {
+    header nav .nav-tools {
+        position: relative;
+        right: 5vw;
+    }
+
+    header nav .nav-tools a.button:any-link {
+        padding: 5px 3px;
+    }
+
+}
+
 @media (min-width: 900px) {
     header nav {
         display: flex;
@@ -183,6 +195,7 @@ header nav .nav-sections ul>li>ul {
 header nav .nav-sections ul>li>ul>li {
     font-weight: 500;
 }
+
 
 @media (min-width: 900px) {
     header nav .nav-sections {
