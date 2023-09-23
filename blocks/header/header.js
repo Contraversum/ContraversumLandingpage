@@ -54,6 +54,7 @@ function toggleAllNavSections(sections, expanded = false) {
  */
 function toggleMenu(nav, navSections, forceExpanded = null) {
     const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
+    console.log('Toggle menu:', expanded);  // Debug line
     const button = nav.querySelector('.nav-hamburger button');
     document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
     nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
@@ -82,6 +83,12 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
         window.addEventListener('keydown', closeOnEscape);
     } else {
         window.removeEventListener('keydown', closeOnEscape);
+    }
+
+    // set style of nav-tools to be position: static when nav is expanded
+    const navTools = nav.querySelector('.nav-tools');
+    if (navTools) {
+        navTools.style.position = expanded ? '' : 'static';
     }
 }
 
