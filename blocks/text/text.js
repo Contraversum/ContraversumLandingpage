@@ -1,5 +1,5 @@
 function addSVGs() {
-    fetch('images/pink-background.svg')
+    let promise1 = fetch('images/pink-background.svg')
         .then(response => response.text())
         .then(data => {
             let section = document.querySelector('.section.pink-background.text-container');
@@ -14,8 +14,7 @@ function addSVGs() {
             section.prepend(svgContainer);
         });
 
-    // fetch ball.svg from images and append it to the same div as the SVG background
-    fetch('images/ball.svg')
+    let promise2 = fetch('images/ball.svg')
         .then(response => response.text())
         .then(data => {
             let section = document.querySelector('.section.pink-background.text-container');
@@ -32,6 +31,9 @@ function addSVGs() {
                 section.prepend(svgContainer);
             }
         });
+
+    // Return a promise that resolves when both SVGs are loaded
+    return Promise.all([promise1, promise2]);
 }
 
 export default function decorate(block) {
@@ -41,8 +43,6 @@ export default function decorate(block) {
     // Iterate over the children of the block, skipping the first one
     for (let i = 1; i < block.children.length; i++) {
         const child = block.children[i];
-
-        // Append each child to the new wrapper div
         wrapperDiv.appendChild(child.cloneNode(true));
     }
 
