@@ -27,11 +27,11 @@ header nav[aria-expanded="true"] {
     min-height: 100vh;
 }
 
-header nav[aria-expanded="true"] .nav-brand {
-    display: none;
-}
-
 @media (max-width: 900px) {
+    header nav[aria-expanded="true"] .nav-brand {
+        display: none;
+    }
+
     header nav .nav-tools {
         position: relative;
         margin-right: 10vw;
