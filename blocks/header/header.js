@@ -142,5 +142,23 @@ export default async function decorate(block) {
         navWrapper.className = 'nav-wrapper';
         navWrapper.append(nav);
         block.append(navWrapper);
+
+        const navBrandLink = nav.querySelector('.nav-brand a');
+        if (navBrandLink) {
+            navBrandLink.addEventListener('click', (e) => {
+                const currentUrl = window.location.href;
+                const baseUrl = `${window.location.protocol}//${window.location.host}/`;
+
+                // If the current URL is the main page, scroll to top and prevent default behavior
+                if (currentUrl === baseUrl) {
+                    e.preventDefault();
+                    window.location.hash = '';
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
     }
 }
