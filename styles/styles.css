@@ -25,6 +25,7 @@
   --discord-color: #292B2F;
   --discord-dark-text: #72767D;
   --discord-text: #DCDDDE;
+  --old-release: #D3D3D3;
   --linear-gradient: linear-gradient(to bottom right,
       #ED237F 0%,
       #E93068 30.2083%,
@@ -422,4 +423,14 @@ main .section.highlight {
   width: 30vw;
   z-index: -2;
   max-width: 550px;
+}
+
+.section-hero {
+  background: var(--linear-gradient);
+}
+
+.section.old-version {
+  border-radius: 8px;
+  margin: 0 75px;
+  background-color: var(--old-release);
 }
