@@ -41,8 +41,12 @@ export default function decorate(block) {
       if (!hasScrolled) {
         hasScrolled = true;
         elements.forEach((el, index) => {
-          const delay = (index + 1) * 0.5; // 0.5s delay increment for each ball
-          el.style.animationDelay = `${delay}s`;
+          // Check if the window width is greater than 768px
+          if (window.innerWidth > 768) {
+            const delay = (index + 1) * 0.5; // 0.5s delay increment for each ball
+            el.style.animationDelay = `${delay}s`;
+          }
+
           el.classList.add("pop");
           el.addEventListener("animationend", () => {
             el.remove();
