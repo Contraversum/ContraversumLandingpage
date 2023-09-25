@@ -25,54 +25,6 @@ function appendBalls() {
   });
 }
 
-// commented due to bad performance on mobile devices
-
-/*
-function animateHeroElements(elements, velocities, scrollThreshold = 500) {
-  // Default value of 500
-  if (elements.length !== velocities.length) {
-    console.error("The number of elements must match the number of velocities");
-    return;
-  }
-
-  let lastScrollTop = 0;
-  let ticking = false;
-
-  function handleScroll() {
-    lastScrollTop = window.scrollY;
-
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        elements.forEach((el, index) => {
-          const velocity = velocities[index];
-          el.style.transform = `translate3d(${lastScrollTop * velocity}px, ${
-            lastScrollTop * velocity
-          }px, 0)`;
-        });
-
-        if (lastScrollTop > scrollThreshold) {
-          window.removeEventListener("scroll", handleScroll);
-          window.addEventListener("scroll", monitorScrollPosition);
-        }
-
-        ticking = false;
-      });
-
-      ticking = true;
-    }
-  }
-
-  function monitorScrollPosition() {
-    if (window.scrollY <= scrollThreshold) {
-      window.addEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", monitorScrollPosition);
-    }
-  }
-
-  window.addEventListener("scroll", handleScroll);
-}
-*/
-
 export default function decorate(block) {
   const backgroundWrapper = document.createElement("div");
   const svgImg = document.createElement("img");
@@ -84,6 +36,19 @@ export default function decorate(block) {
   svgImg.classList.add("background");
 
   appendBalls().then((elements) => {
-    animateHeroElements(elements, [0.3, 0.05, 0.1]);
+    let hasScrolled = false;
+    window.addEventListener("scroll", () => {
+      if (!hasScrolled) {
+        hasScrolled = true;
+        elements.forEach((el, index) => {
+          const delay = (index + 1) * 0.5; // 0.5s delay increment for each ball
+          el.style.animationDelay = `${delay}s`;
+          el.classList.add("pop");
+          el.addEventListener("animationend", () => {
+            el.remove();
+          });
+        });
+      }
+    });
   });
 }
