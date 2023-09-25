@@ -25,6 +25,9 @@ function appendBalls() {
   });
 }
 
+// commented due to bad performance on mobile devices
+
+/*
 function animateHeroElements(elements, velocities, scrollThreshold = 500) {
   // Default value of 500
   if (elements.length !== velocities.length) {
@@ -68,6 +71,7 @@ function animateHeroElements(elements, velocities, scrollThreshold = 500) {
 
   window.addEventListener("scroll", handleScroll);
 }
+*/
 
 export default function decorate(block) {
   const backgroundWrapper = document.createElement("div");
