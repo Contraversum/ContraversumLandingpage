@@ -65,12 +65,6 @@ export default function decorate(block) {
   svgImg.alt = 'Hero background';
   svgImg.classList.add('background');
 
-  const logo = document.createElement('img');
-  logo.src = '/images/white-logo.svg';
-  logo.classList.add('logo');
-  logo.alt = 'Logo';
-  block.appendChild(logo);
-
   appendBalls().then((elements) => {
     animateHeroElements(elements, [0.3, 0.05, 0.1]);
   });
