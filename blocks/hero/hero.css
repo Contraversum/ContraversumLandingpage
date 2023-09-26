@@ -54,15 +54,6 @@ main .hero img {
   height: 100%;
 }
 
-.logo {
-  object-fit: contain !important;
-  width: 200px !important;
-  height: auto !important;
-  position: absolute;
-  top: -30px;
-  left: -10px;
-}
-
 .hero>div:nth-child(2)>div picture {
   position: absolute;
   height: 90%;
@@ -160,6 +151,18 @@ main .hero img {
     width: 90vw;
     text-align: center;
   }
+
+  .hero-container .ball.element-1 {
+    left: 7vw;
+  }
+
+  .hero-container .ball.element-2 {
+    left: 66vw;
+  }
+
+  .hero-container .ball.element-3 {
+    left: 21vw;
+  }
 }
 
 @media (max-width: 340px) {
@@ -167,3 +170,21 @@ main .hero img {
     font-size: 36px;
   }
 }
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.hero-container .ball.pop {
+  animation: pop 1s forwards;
+}
+
