@@ -151,6 +151,18 @@ main .hero img {
     width: 90vw;
     text-align: center;
   }
+
+  .hero-container .ball.element-1 {
+    left: 7vw;
+  }
+
+  .hero-container .ball.element-2 {
+    left: 66vw;
+  }
+
+  .hero-container .ball.element-3 {
+    left: 21vw;
+  }
 }
 
 @media (max-width: 340px) {

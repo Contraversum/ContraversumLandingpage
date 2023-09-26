@@ -1,37 +1,37 @@
 function addSVGs() {
-  let promise1 = fetch("images/pink-background.svg")
+  const promise1 = fetch('images/pink-background.svg')
     .then((response) => response.text())
     .then((data) => {
-      let section = document.querySelector(
-        ".section.pink-background.text-container"
+      const section = document.querySelector(
+        '.section.pink-background.text-container',
       );
-      let svgContainer = document.createElement("div");
+      const svgContainer = document.createElement('div');
       svgContainer.innerHTML = data;
 
       // Adjust the SVG's preserveAspectRatio attribute
-      let svgElement = svgContainer.querySelector("svg");
-      svgElement.setAttribute("preserveAspectRatio", "none");
-      svgElement.classList.add("background");
+      const svgElement = svgContainer.querySelector('svg');
+      svgElement.setAttribute('preserveAspectRatio', 'none');
+      svgElement.classList.add('background');
 
       section.prepend(svgContainer);
     });
 
   const elements = [];
-  let promise2 = fetch("images/ball.svg")
+  const promise2 = fetch('images/ball.svg')
     .then((response) => response.text())
     .then((data) => {
-      let section = document.querySelector(
-        ".section.pink-background.text-container"
+      const section = document.querySelector(
+        '.section.pink-background.text-container',
       );
       for (let i = 0; i < 3; i++) {
-        let svgContainer = document.createElement("div");
+        const svgContainer = document.createElement('div');
         svgContainer.innerHTML = data;
-        svgContainer.classList.add("ball");
-        svgContainer.classList.add("element-" + (i + 1));
+        svgContainer.classList.add('ball');
+        svgContainer.classList.add(`element-${i + 1}`);
 
         // Adjust the SVG's preserveAspectRatio attribute
-        let svgElement = svgContainer.querySelector("svg");
-        svgElement.setAttribute("preserveAspectRatio", "none");
+        const svgElement = svgContainer.querySelector('svg');
+        svgElement.setAttribute('preserveAspectRatio', 'none');
 
         section.prepend(svgContainer);
         elements.push(svgContainer); // push the new element to the array
@@ -42,8 +42,8 @@ function addSVGs() {
 }
 
 export default function decorate(block) {
-  const wrapperDiv = document.createElement("div");
-  wrapperDiv.classList.add("bottom-icons");
+  const wrapperDiv = document.createElement('div');
+  wrapperDiv.classList.add('bottom-icons');
 
   // Iterate over the children of the block, skipping the first one
   for (let i = 1; i < block.children.length; i++) {
@@ -57,28 +57,28 @@ export default function decorate(block) {
   }
   block.appendChild(wrapperDiv);
 
-  if (block.classList.contains("no-image")) {
+  if (block.classList.contains('no-image')) {
     addSVGs().then((elements) => {
-      let section = document.querySelector(
-        ".section.pink-background.text-container"
+      const section = document.querySelector(
+        '.section.pink-background.text-container',
       );
 
-      window.addEventListener("scroll", () => {
+      window.addEventListener('scroll', () => {
         // Check if the user has scrolled to the .pink-background section
-        let sectionTop = section.getBoundingClientRect().top;
+        const sectionTop = section.getBoundingClientRect().top;
 
         // This means that the top of the .pink-background section is now visible in the viewport
         if (
-          sectionTop <= window.innerHeight &&
-          !section.classList.contains("animated")
+          sectionTop <= window.innerHeight
+          && !section.classList.contains('animated')
         ) {
-          section.classList.add("animated"); // This class is used to ensure that the animation runs only once.
+          section.classList.add('animated'); // This class is used to ensure that the animation runs only once.
 
           elements.forEach((el, index) => {
-            const delay = (index + 1) * 0.75;
+            const delay = (index + 1) * 0.5;
             el.style.animationDelay = `${delay}s`;
-            el.classList.add("pop");
-            el.addEventListener("animationend", () => {
+            el.classList.add('pop');
+            el.addEventListener('animationend', () => {
               el.remove();
             });
           });
@@ -87,22 +87,21 @@ export default function decorate(block) {
     });
   }
   // Grab all the button-like elements.
-  const buttons = document.querySelectorAll(".bottom-icons > div");
+  const buttons = document.querySelectorAll('.bottom-icons > div');
 
   // Add a click event listener to each button-like element.
   buttons.forEach((button) => {
-    button.addEventListener("click", function () {
+    button.addEventListener('click', () => {
       // Find the target element using the data-id attribute.
       const targetSection = document.querySelector(
-        '[data-id="bottom-call-to-action"]'
+        '[data-id="bottom-call-to-action"]',
       );
-      const positionToScroll =
-        targetSection.getBoundingClientRect().top + window.scrollY - 200;
+      const positionToScroll = targetSection.getBoundingClientRect().top + window.scrollY - 200;
 
       // Use window.scrollTo method to scroll to the adjusted position.
       window.scrollTo({
         top: positionToScroll,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     });
   });
