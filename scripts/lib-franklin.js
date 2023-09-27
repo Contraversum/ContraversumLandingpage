@@ -85,14 +85,14 @@ export async function replaceSVGImageLinks(element) {
   allDivElements.forEach(async (el) => {
     const content = el.textContent.trim();
 
-    // Check if text content starts with "/images", which implies this div should contain only the image
+    // Check if text content starts with "/images"
     if (content.startsWith('/images')) {
       const regex = /\/images\/(.*?\.svg)/; // Regex to capture everything after /images/ until .svg
       const match = regex.exec(content);
 
       if (match) {
         const imageName = match[1];
-        const localImageUrl = `/images/${imageName}`;  // Local URL
+        const localImageUrl = `/images/${imageName}`; // Local URL
 
         // Fetch the SVG content from the local URL
         const response = await fetch(localImageUrl);
@@ -409,6 +409,38 @@ export function updateSectionsStatus(main) {
       }
     }
   }
+}
+
+export function decorateCarouselForMobile(main) {
+  const section = main.querySelector('.section.discord-social-proof');
+  if (!section) return;
+
+  // Create a container for the carousel buttons
+  const buttonContainer = document.createElement('div');
+  buttonContainer.className = 'carousel-buttons-container';
+
+  const cardsContainer = section; // This refers to the .cards-container element, not .cards
+  const cards = section.querySelectorAll('.cards-wrapper');
+  cards.forEach((_, index) => {
+    // Create a button for each card
+    const button = document.createElement('button');
+    button.className = 'carousel-button';
+    if (index === 0) button.classList.add('active');
+
+    // Handle the button click
+    button.addEventListener('click', () => {
+      const translateX = -100 * index;
+      cardsContainer.style.transform = `translateX(${translateX}%)`;
+      buttonContainer.querySelectorAll('.carousel-button').forEach((btn, btnIndex) => {
+        btn.classList[btnIndex === index ? 'add' : 'remove']('active');
+      });
+    });
+
+    buttonContainer.appendChild(button);
+  });
+
+  // Append the button container after the section
+  section.after(buttonContainer);
 }
 
 /**
