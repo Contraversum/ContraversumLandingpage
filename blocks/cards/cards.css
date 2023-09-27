@@ -104,3 +104,22 @@
     overflow: hidden;
   }
 }
+
+@media (max-width: 900px) {
+  .cards>ul {
+    display: grid;
+    grid-template-columns: repeat(3, 100vw); 
+    overflow-x: hidden; 
+    scroll-snap-type: x mandatory; 
+  }
+  
+  .cards>ul>li {
+    width: 100vw; 
+    scroll-snap-align: start; 
+  }
+  
+  .top-elements>p:nth-child(3) {
+    display: none !important;
+  }
+}
+

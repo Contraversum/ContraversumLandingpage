@@ -92,7 +92,7 @@ export async function replaceSVGImageLinks(element) {
 
       if (match) {
         const imageName = match[1];
-        const localImageUrl = `/images/${imageName}`;  // Local URL
+        const localImageUrl = `/images/${imageName}`; // Local URL
 
         // Fetch the SVG content from the local URL
         const response = await fetch(localImageUrl);
@@ -613,6 +613,10 @@ export function decorateButtons(element) {
       }
     }
   });
+}
+
+export function decorateCardsCarouselForMobile(element) {
+
 }
 
 /**

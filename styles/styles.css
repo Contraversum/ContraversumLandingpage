@@ -371,6 +371,8 @@ main .section.highlight {
   }
 }
 
+/*DISCORD SOCIAL PROOF*/
+
 .section.discord-social-proof.cards-container {
   display: flex;
   gap: 20px;
@@ -411,11 +413,21 @@ main .section.highlight {
   }
 }
 
+@media (max-width: 900px) {
+  .section.discord-social-proof.cards-container {
+    flex-direction: row;
+    overflow-x: hidden;
+    gap: 0px;
+  }
+}
+
+
 @media (min-width: 990px) {
   .pink-background .default-content-wrapper>p {
     display: block !important;
   }
 }
+
 
 .pink-background .default-content-wrapper>p {
   display: none;
