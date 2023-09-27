@@ -62,6 +62,14 @@
 
 }
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Inter/static/Inter-Regular.ttf') format('woff2');
+}
+
 @media (min-width: 900px) {
   :root {
     --heading-font-size-xxl: 60px;
