@@ -606,6 +606,7 @@ export function normalizeHeadings(el, allowedHeadings) {
 export function resizeImages() {
   const images = document.querySelectorAll('img');
   images.forEach((image) => {
+    console.log(image);
     const { width, height } = image.getBoundingClientRect();
     image.setAttribute('width', width);
     image.setAttribute('height', height);
