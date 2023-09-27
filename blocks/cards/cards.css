@@ -7,12 +7,13 @@
   grid-gap: 16px;
   width: 400px;
   height: 530px;
+  border-radius: 5px;
 }
 
 .cards>ul>li {
+  border-radius: 5px;
   background-color: var(--discord-color);
   color: var(--discord-text);
-  border-radius: 5px;
   padding-left: 10px;
   font-family: var(--discord-font-family);
 }
@@ -80,12 +81,12 @@
 @media (max-width: 767px) {
   .cards>ul {
     width: 100%;
+    min-height: 500px;
     height: auto;
   }
 
   .cards > ul > li {
     width: 202%;
-
   }
 
   .top-elements>p:nth-child(3) {
@@ -122,6 +123,7 @@
 
   .cards-card-body>p {
     width: 90%;
+    font-size: var(--body-font-size-s);
   }
 }
 

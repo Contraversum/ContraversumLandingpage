@@ -416,6 +416,7 @@ main .section.highlight {
 
 @media (max-width: 900px) {
   .section.discord-social-proof.cards-container {
+    transition: transform 0.3s ease;
     flex-direction: row;
     overflow-x:visible;
     gap: 30px;
