@@ -4,6 +4,7 @@ import {
   loadFooter,
   loadHeader,
   decorateButtons,
+  resizeImages,
   decorateIcons,
   replaceSVGImageLinks,
   decorateSections,
@@ -57,6 +58,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  resizeImages(main);
 }
 
 /**
