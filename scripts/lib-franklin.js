@@ -85,7 +85,7 @@ export async function replaceSVGImageLinks(element) {
   allDivElements.forEach(async (el) => {
     const content = el.textContent.trim();
 
-    // Check if text content starts with "/images", which implies this div should contain only the image
+    // Check if text content starts with "/images"
     if (content.startsWith('/images')) {
       const regex = /\/images\/(.*?\.svg)/; // Regex to capture everything after /images/ until .svg
       const match = regex.exec(content);
@@ -411,6 +411,10 @@ export function updateSectionsStatus(main) {
   }
 }
 
+export function decorateCarouselForMobile(main) {
+
+}
+
 /**
  * Decorates all blocks in a container element.
  * @param {Element} main The container element
@@ -612,44 +616,6 @@ export function decorateButtons(element) {
         }
       }
     }
-  });
-}
-
-export function decorateCardsCarouselForMobile(element) {
-  const container = element.querySelector('.section.discord-social-proof.cards-container');
-  if (!container) return; // Exit if the container is not found
-
-  // Create buttons
-  const buttonsContainer = document.createElement('div');
-  buttonsContainer.classList.add('carousel-buttons-container');
-
-  for (let i = 0; i < 3; i++) {
-    const button = document.createElement('button');
-    button.classList.add('carousel-button');
-    button.dataset.index = i; // Store index in dataset for use in event listener
-    buttonsContainer.appendChild(button);
-  }
-
-  // Append buttons after the container
-  container.parentNode.insertBefore(buttonsContainer, container.nextSibling);
-
-  // Event Listener for buttons
-  buttonsContainer.addEventListener('click', (e) => {
-    if (!e.target.classList.contains('carousel-button')) return;
-
-    const index = parseInt(e.target.dataset.index);
-    const cardsUl = container.querySelector('.cards>ul');
-    if (!cardsUl) return;
-
-    // Calculate the scrollLeft position and scroll to the selected card
-    const newScrollPosition = index * window.innerWidth;
-    cardsUl.scrollLeft = newScrollPosition;
-
-    // Enable pointer events for the currently visible card
-    const allCards = cardsUl.querySelectorAll('li');
-    allCards.forEach((card, idx) => {
-      card.style.pointerEvents = idx === index ? 'auto' : 'none';
-    });
   });
 }
 

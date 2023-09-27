@@ -100,7 +100,7 @@
 @media (max-width: 679px) {
   .cards > ul > li {
     width: 100%;
-    max-width: calc(100vw - 40px) !important;
+    max-width: calc(100vw - 40px);
     overflow: hidden;
   }
 }
@@ -109,7 +109,9 @@
   .cards>ul {
     display: grid;
     grid-template-columns: repeat(3, 100vw); 
-    overflow-x: hidden; 
+    overflow: hidden; 
+    width: 100%;
+    max-width: calc(100vw - 40px);
     scroll-snap-type: x mandatory; 
   }
   
@@ -143,4 +145,7 @@
   margin: 0 5px; 
 }
 
+.carousel-button.active {
+  background: var(--highlight-pink);
+}
 

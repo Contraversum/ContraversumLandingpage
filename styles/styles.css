@@ -417,7 +417,8 @@ main .section.highlight {
   .section.discord-social-proof.cards-container {
     flex-direction: row;
     overflow-x: hidden;
-    gap: 0px;
+    gap: 30px;
+    padding: 32px 16px;
   }
 }
 
