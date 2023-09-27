@@ -616,7 +616,41 @@ export function decorateButtons(element) {
 }
 
 export function decorateCardsCarouselForMobile(element) {
+  const container = element.querySelector('.section.discord-social-proof.cards-container');
+  if (!container) return; // Exit if the container is not found
 
+  // Create buttons
+  const buttonsContainer = document.createElement('div');
+  buttonsContainer.classList.add('carousel-buttons-container');
+
+  for (let i = 0; i < 3; i++) {
+    const button = document.createElement('button');
+    button.classList.add('carousel-button');
+    button.dataset.index = i; // Store index in dataset for use in event listener
+    buttonsContainer.appendChild(button);
+  }
+
+  // Append buttons after the container
+  container.parentNode.insertBefore(buttonsContainer, container.nextSibling);
+
+  // Event Listener for buttons
+  buttonsContainer.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('carousel-button')) return;
+
+    const index = parseInt(e.target.dataset.index);
+    const cardsUl = container.querySelector('.cards>ul');
+    if (!cardsUl) return;
+
+    // Calculate the scrollLeft position and scroll to the selected card
+    const newScrollPosition = index * window.innerWidth;
+    cardsUl.scrollLeft = newScrollPosition;
+
+    // Enable pointer events for the currently visible card
+    const allCards = cardsUl.querySelectorAll('li');
+    allCards.forEach((card, idx) => {
+      card.style.pointerEvents = idx === index ? 'auto' : 'none';
+    });
+  });
 }
 
 /**

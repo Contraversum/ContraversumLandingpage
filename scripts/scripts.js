@@ -53,12 +53,12 @@ function buildAutoBlocks(main) {
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
-  decorateCardsCarouselForMobile(main);
   replaceSVGImageLinks(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateCardsCarouselForMobile(main);
 }
 
 /**
