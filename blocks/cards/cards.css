@@ -88,10 +88,6 @@
 
   }
 
-  .cards-card-body>p {
-    width: 90%;
-  }
-
   .top-elements>p:nth-child(3) {
     display: none !important;
   }
@@ -123,6 +119,10 @@
   .top-elements>p:nth-child(3) {
     display: none !important;
   }
+
+  .cards-card-body>p {
+    width: 90%;
+  }
 }
 
 
@@ -149,3 +149,22 @@
   background: var(--highlight-pink);
 }
 
+@media (min-width: 900px) {
+  .carousel-buttons-container {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel-buttons-container {
+    display: block;
+  }
+
+  .section.discord-social-proof .cards-wrapper {
+    display: none;
+  }
+  
+  .section.discord-social-proof .cards-wrapper:first-child {
+    display: block;
+  }
+}
