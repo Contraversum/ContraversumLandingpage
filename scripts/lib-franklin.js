@@ -602,6 +602,16 @@ export function normalizeHeadings(el, allowedHeadings) {
   });
 }
 
+// function to resize images and set the width and height of the HTML Tag
+export function resizeImages() {
+  const images = document.querySelectorAll('img');
+  images.forEach((image) => {
+    const { width, height } = image.getBoundingClientRect();
+    image.setAttribute('width', width);
+    image.setAttribute('height', height);
+  });
+}
+
 /**
  * Set template (page structure) and theme (page styles).
  */
