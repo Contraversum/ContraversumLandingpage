@@ -85,6 +85,7 @@ body {
 
 main {
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  overflow: hidden;
 }
 
 body.appear {
@@ -416,7 +417,7 @@ main .section.highlight {
 @media (max-width: 900px) {
   .section.discord-social-proof.cards-container {
     flex-direction: row;
-    overflow-x: hidden;
+    overflow-x:visible;
     gap: 30px;
     padding: 32px 16px;
   }

@@ -412,30 +412,27 @@ export function updateSectionsStatus(main) {
 }
 
 export function decorateCarouselForMobile(main) {
-  console.log(main);
   const section = main.querySelector('.section.discord-social-proof');
   if (!section) return;
-
-  console.log('decorating carousel for mobile');
 
   // Create a container for the carousel buttons
   const buttonContainer = document.createElement('div');
   buttonContainer.className = 'carousel-buttons-container';
 
+  const cardsContainer = section; // This refers to the .cards-container element, not .cards
   const cards = section.querySelectorAll('.cards-wrapper');
   cards.forEach((_, index) => {
     // Create a button for each card
     const button = document.createElement('button');
     button.className = 'carousel-button';
-    if (index === 0) button.classList.add('active'); // set the first button as active
+    if (index === 0) button.classList.add('active');
 
     // Handle the button click
     button.addEventListener('click', () => {
-      cards.forEach((card, cardIndex) => {
-        card.style.display = cardIndex === index ? 'block' : 'none'; // show the clicked card and hide the others
-        buttonContainer.querySelectorAll('.carousel-button').forEach((btn) => {
-          btn.classList[cardIndex === index ? 'add' : 'remove']('active'); // set the clicked button as active and the others as inactive
-        });
+      const translateX = -100 * index;
+      cardsContainer.style.transform = `translateX(${translateX}%)`;
+      buttonContainer.querySelectorAll('.carousel-button').forEach((btn, btnIndex) => {
+        btn.classList[btnIndex === index ? 'add' : 'remove']('active');
       });
     });
 

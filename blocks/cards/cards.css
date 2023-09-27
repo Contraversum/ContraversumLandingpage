@@ -149,6 +149,7 @@
   background: var(--highlight-pink);
 }
 
+
 @media (min-width: 900px) {
   .carousel-buttons-container {
     display: none;
@@ -161,7 +162,7 @@
   }
 
   .section.discord-social-proof .cards-wrapper {
-    display: none;
+    flex: 0 0 100%;
   }
   
   .section.discord-social-proof .cards-wrapper:first-child {
