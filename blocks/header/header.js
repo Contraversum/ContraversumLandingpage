@@ -1,4 +1,4 @@
-import { getMetadata, decorateIcons, decorateButtons, resizeImages } from '../../scripts/lib-franklin.js';
+import { getMetadata, decorateIcons, decorateButtons } from '../../scripts/lib-franklin.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -151,7 +151,10 @@ export default async function decorate(block) {
     navWrapper.append(nav);
     block.append(navWrapper);
 
+
+    // navigate to the top of the page when clicking the logo
     const navBrandLink = nav.querySelector('.nav-brand a');
+    navBrandLink.title = 'Link to home or top of page'
     if (navBrandLink) {
       navBrandLink.addEventListener('click', (e) => {
         const currentUrl = window.location.href;
