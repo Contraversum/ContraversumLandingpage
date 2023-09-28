@@ -4,6 +4,11 @@ function appendBalls() {
       .then((response) => response.text())
       .then((data) => {
         const section = document.querySelector('.section.hero-container');
+
+        const ballsContainer = document.createElement('div');
+        ballsContainer.style.position = 'relative';
+        section.prepend(ballsContainer);
+
         const elements = [];
 
         for (let i = 0; i < 3; i++) {
@@ -16,7 +21,7 @@ function appendBalls() {
           const svgElement = svgContainer.querySelector('svg');
           svgElement.setAttribute('preserveAspectRatio', 'none');
 
-          section.prepend(svgContainer);
+          ballsContainer.appendChild(svgContainer); // Append to the ballsContainer instead of the section
           elements.push(svgContainer);
         }
 

@@ -175,9 +175,11 @@ main .hero img {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.2);
   }
+
   100% {
     opacity: 0;
     transform: scale(1.5);
@@ -187,4 +189,3 @@ main .hero img {
 .hero-container .ball.pop {
   animation: pop 1s forwards;
 }
-
