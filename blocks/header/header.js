@@ -145,12 +145,16 @@ export default async function decorate(block) {
 
     decorateIcons(nav);
     decorateButtons(nav);
+
     const navWrapper = document.createElement('div');
     navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
     block.append(navWrapper);
 
+
+    // navigate to the top of the page when clicking the logo
     const navBrandLink = nav.querySelector('.nav-brand a');
+    navBrandLink.title = 'Link to home or top of page'
     if (navBrandLink) {
       navBrandLink.addEventListener('click', (e) => {
         const currentUrl = window.location.href;

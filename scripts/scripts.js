@@ -4,6 +4,7 @@ import {
   loadFooter,
   loadHeader,
   decorateButtons,
+  resizeImages,
   decorateIcons,
   replaceSVGImageLinks,
   decorateSections,
@@ -90,6 +91,7 @@ async function loadLazy(doc) {
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  resizeImages(doc);
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));

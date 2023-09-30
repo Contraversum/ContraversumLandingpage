@@ -411,6 +411,16 @@ export function updateSectionsStatus(main) {
   }
 }
 
+export function setAriaLabelForButtons(buttonSelector) {
+  const buttons = document.querySelectorAll(buttonSelector);
+
+  buttons.forEach((button, index) => {
+    // set aria label for each button
+    const label = button.title || button.textContent || button.className;
+    button.setAttribute('aria-label', label || `Button ${index + 1}`);
+  });
+}
+
 export function decorateCarouselForMobile(main) {
   const section = main.querySelector('.section.discord-social-proof');
   if (!section) return;
@@ -441,6 +451,7 @@ export function decorateCarouselForMobile(main) {
 
   // Append the button container after the section
   section.after(buttonContainer);
+  setAriaLabelForButtons('.carousel-button');
 }
 
 /**
@@ -602,6 +613,16 @@ export function normalizeHeadings(el, allowedHeadings) {
   });
 }
 
+// function to resize images and set the width and height of the HTML Tag
+export function resizeImages() {
+  const images = document.querySelectorAll('img');
+  images.forEach((image) => {
+    const { width, height } = image.getBoundingClientRect();
+    image.setAttribute('width', width);
+    image.setAttribute('height', height);
+  });
+}
+
 /**
  * Set template (page structure) and theme (page styles).
  */
@@ -646,7 +667,6 @@ export function decorateButtons(element) {
     }
   });
 }
-
 /**
  * Load LCP block and/or wait for LCP in default content.
  */
