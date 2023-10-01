@@ -52,6 +52,7 @@
   /* heading sizes */
   --heading-font-size-xxl: 48px;
   --heading-font-size-xl: 40px;
+  --heading-font-size-sxl: 38px;
   --heading-font-size-l: 32px;
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
@@ -426,7 +427,7 @@ main .section.highlight {
   .section.discord-social-proof.cards-container {
     transition: transform 0.3s ease;
     flex-direction: row;
-    overflow-x:visible;
+    overflow-x: visible;
     gap: 30px;
     padding: 32px 16px;
   }
@@ -456,4 +457,14 @@ main .section.highlight {
   border-radius: 8px;
   margin: 0 75px;
   background-color: var(--old-release);
+}
+
+@media (max-width: 676px) {
+  .section.old-version {
+    margin: 0 10px;
+  }
+
+  .section-hero h1 {
+    line-break: anywhere;
+  }
 }
