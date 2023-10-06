@@ -18,17 +18,18 @@ header nav {
     height: var(--nav-height);
     padding: 0 1rem;
     font-family: var(--body-font-family);
+    transition: min-height 0.2s ease-in-out;
 }
 
 header nav[aria-expanded="true"] {
     grid-template:
         'hamburger brand tools' var(--nav-height) 'sections sections sections' 1fr / auto 1fr auto;
-    overflow-y: auto;
-    min-height: 100vh;
+    overflow-y: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 900px) {
-    header nav[aria-expanded="true"] .nav-brand {
+    header nav .nav-brand {
         display: none;
     }
 
