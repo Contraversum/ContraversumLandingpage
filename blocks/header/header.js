@@ -142,6 +142,15 @@ export default async function decorate(block) {
       });
     }
 
+    // if Link is to an external page open in new tab
+    const navLinks = nav.querySelectorAll('.nav-sections a');
+    navLinks.forEach((navLink) => {
+      if (navLink.href && navLink.href.indexOf(window.location.host) === -1) {
+        navLink.target = '_blank';
+        navLink.rel = 'noopener noreferrer';
+      }
+    });
+
     // hamburger for mobile
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');
