@@ -25,7 +25,7 @@ header nav[aria-expanded="true"] {
     grid-template:
         'hamburger brand tools' var(--nav-height) 'sections sections sections' 1fr / auto 1fr auto;
     overflow-y: hidden;
-    box-shadow: 0px px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 900px) {
