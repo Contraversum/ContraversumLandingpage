@@ -2,9 +2,7 @@ function addSVGs() {
   const promise1 = fetch('images/pink-background.svg')
     .then((response) => response.text())
     .then((data) => {
-      const section = document.querySelector(
-        '.section.pink-background.text-container',
-      );
+      const section = document.querySelector('.section.pink-background.text-container');
       const svgContainer = document.createElement('div');
       svgContainer.innerHTML = data;
 
@@ -20,12 +18,22 @@ function addSVGs() {
   const promise2 = fetch('images/ball.svg')
     .then((response) => response.text())
     .then((data) => {
-      const section = document.querySelector(
-        '.section.pink-background.text-container',
-      );
+      const section = document.querySelector('.section.pink-background.text-container');
       for (let i = 0; i < 3; i++) {
         const svgContainer = document.createElement('div');
         svgContainer.innerHTML = data;
+
+        // Adjust the radialGradient IDs to ensure they are unique
+        const gradients = svgContainer.querySelectorAll('radialGradient');
+        gradients.forEach((gradient) => {
+          const oldId = gradient.id;
+          const newId = `${oldId}_${i + 1}`;
+          gradient.id = newId;
+
+          // Update all references to this gradient in the SVG
+          svgContainer.innerHTML = svgContainer.innerHTML.replace(new RegExp(`url\\(#${oldId}\\)`, 'g'), `url(#${newId})`);
+        });
+
         svgContainer.classList.add('ball');
         svgContainer.classList.add(`element-${i + 1}`);
 
