@@ -29,9 +29,7 @@ header nav[aria-expanded="true"] {
 }
 
 @media (max-width: 900px) {
-    header nav .nav-brand {
-        display: none;
-    }
+
 
     header nav .nav-tools {
         position: relative;
@@ -99,7 +97,7 @@ header nav .nav-hamburger-icon::after {
     display: block;
     position: relative;
     width: 20px;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
 }
 
 header nav .nav-hamburger-icon::before,
@@ -107,7 +105,7 @@ header nav .nav-hamburger-icon::after {
     content: '';
     position: absolute;
     background: currentcolor;
-    transform-origin: center center; 
+    transform-origin: center center;
 }
 
 header nav[aria-expanded="false"] .nav-hamburger-icon,
