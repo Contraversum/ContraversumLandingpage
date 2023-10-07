@@ -56,10 +56,10 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
   console.log('Toggle menu:', expanded); // Debug line
   const button = nav.querySelector('.nav-hamburger button');
-  document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+
   // enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
   if (isDesktop.matches) {
@@ -89,6 +89,18 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
     navTools.style.position = expanded ? '' : 'static';
+  }
+
+  requestAnimationFrame(() => {
+    const navSectionsHeight = navSections.offsetHeight;
+    const navToolsHeight = navTools.offsetHeight;
+    nav.style.minHeight = `${navSectionsHeight + navToolsHeight}px`;
+  });
+
+  if (isDesktop.matches && !expanded) {
+    requestAnimationFrame(() => {
+      nav.style.minHeight = '0px';
+    });
   }
 }
 
@@ -130,6 +142,15 @@ export default async function decorate(block) {
       });
     }
 
+    // if Link is to an external page open in new tab
+    const navLinks = nav.querySelectorAll('.nav-sections a');
+    navLinks.forEach((navLink) => {
+      if (navLink.href && navLink.href.indexOf(window.location.host) === -1) {
+        navLink.target = '_blank';
+        navLink.rel = 'noopener noreferrer';
+      }
+    });
+
     // hamburger for mobile
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');
@@ -151,10 +172,9 @@ export default async function decorate(block) {
     navWrapper.append(nav);
     block.append(navWrapper);
 
-
     // navigate to the top of the page when clicking the logo
     const navBrandLink = nav.querySelector('.nav-brand a');
-    navBrandLink.title = 'Link to home or top of page'
+    navBrandLink.title = 'Link to home or top of page';
     if (navBrandLink) {
       navBrandLink.addEventListener('click', (e) => {
         const currentUrl = window.location.href;
