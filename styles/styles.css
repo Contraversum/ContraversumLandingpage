@@ -39,7 +39,7 @@
       #FDC6D3 100%);
 
   /* fonts */
-  --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --body-font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
   --discord-font-family: 'Inter', sans-serif;
@@ -68,7 +68,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/Inter/static/Inter-Regular.ttf') format('woff2');
+  src: url('../fonts/inter-v13-latin-regular.woff2') format('woff2');
 }
 
 @media (min-width: 900px) {
@@ -378,6 +378,16 @@ main .section.highlight {
 @media screen and (min-width: 1920px) {
   .section.bottom-call-to-action .default-content-wrapper {
     width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .section.bottom-call-to-action .default-content-wrapper>p:first-child {
+    display: none;
+  }
+
+  .section.bottom-call-to-action .default-content-wrapper h1 {
+    margin-top: 5vh;
   }
 }
 
